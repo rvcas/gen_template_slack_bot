@@ -9,15 +9,15 @@ defmodule GenTemplateSlackBot.Mixfile do
     { :ex_doc,         ">0.0.0",  only: [:dev, :test] },
   ]
 
-  @maintainers ["Your Name <youe@example.com>"]
-  @github      "https://github.com/•••/#{@name}"
+  @maintainers ["Lucas Rosa <lucas@barnonesystems.com>"]
+  @github      "https://github.com/lrosa007/#{@name}"
 
   @description """
   What your template does (less than 300 characters)
   """
-  
+
   # ------------------------------------------------------------
-  
+
   def project do
     in_production = Mix.env == :prod
     [
@@ -44,5 +44,5 @@ defmodule GenTemplateSlackBot.Mixfile do
 #      extra:       %{ "type" => "a_template_for_mix_gen" },
     ]
   end
-  
+
 end
