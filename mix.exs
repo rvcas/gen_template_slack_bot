@@ -16,8 +16,6 @@ defmodule GenTemplateSlackBot.Mixfile do
   What your template does (less than 300 characters)
   """
 
-  # ------------------------------------------------------------
-
   def project do
     in_production = Mix.env == :prod
     [
@@ -41,7 +39,7 @@ defmodule GenTemplateSlackBot.Mixfile do
       links:       %{
         "GitHub" => @github,
       },
-#      extra:       %{ "type" => "a_template_for_mix_gen" },
+      #     extra:       %{ "type" => "a_template_for_mix_gen" },
     ]
   end
 
