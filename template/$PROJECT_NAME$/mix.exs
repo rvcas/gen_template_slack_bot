@@ -5,7 +5,6 @@ defmodule <%= @project_name_camel_case %>.Mixfile do
   @version "0.1.0"
 
   @deps [
-    {:credo, "~> 0.8.6"},
     {:hedwig_slack, "~> 1.0"},
     {:httpoison, "~> 0.13.0"},
     {:poison, "~> 3.1.0"},

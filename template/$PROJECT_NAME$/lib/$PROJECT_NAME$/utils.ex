@@ -15,10 +15,10 @@ defmodule <%= @project_name_camel_case %>.Utils do
   @doc """
   Prepare a %Hedwig.Message struct to pass to send_msg/1
   """
-  defp prepare_msg(msg, room) do
+  def prepare_msg(msg, room) do
     %Hedwig.Message{
       type: "message",
-      room: room_id(room),
+      room: channel_id(room),
       text: msg
     }
   end

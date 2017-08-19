@@ -3,18 +3,17 @@ defmodule <%= @project_name_camel_case %>.Application do
 
   use Application
 
-  alias <%= @project_name_camel_case %>.{Robot, Cache, Jobs}
+  alias <%= @project_name_camel_case %>.{Cache, Robot, Scheduler}
 
 
   def start(_type, _args) do
     import Supervisor.Spec, warn: false
 
     children = [
-      worker(Robot, []),
       worker(Cache, []),
+      worker(Robot, []),
+      worker(Scheduler, []),
     ]
-
-    Jobs.add_jobs()
 
     opts = [
       strategy: :one_for_one,

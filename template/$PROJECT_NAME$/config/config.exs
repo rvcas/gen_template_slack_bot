@@ -12,7 +12,7 @@ config :<%= @project_name %>, <%= @project_name_camel_case %>.Robot,
 
 # configure jobs
 config :<%= @project_name %>, <%= @project_name_camel_case %>.Scheduler,
-  timezone: "America/New_York"
+  timezone: "America/New_York",
   jobs: [
     {"* * * * *", {<%= @project_name_camel_case %>.Jobs.Hello, :run, ["general"]}},
   ]
