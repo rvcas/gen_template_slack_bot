@@ -13,6 +13,17 @@ defmodule <%= @project_name_camel_case %>.Utils do
   end
 
   @doc """
+  Prepare a %Hedwig.Message struct to pass to send_msg/1
+  """
+  defp prepare_msg(msg, room) do
+    %Hedwig.Message{
+      type: "message",
+      room: room_id(room),
+      text: msg
+    }
+  end
+
+  @doc """
   Gets the list of channels for Slack from Hedwig.Adapters.Slack process state
   """
   def channels do

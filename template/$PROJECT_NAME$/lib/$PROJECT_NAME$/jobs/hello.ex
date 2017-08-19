@@ -1,22 +1,14 @@
-defmodule <%= @project_name_camel_case %>.Jobs.Quote do
+defmodule <%= @project_name_camel_case %>.Jobs.Hello do
   @moduledoc false
 
-  use Hedwig.Responder
+  import <%= @project_name_camel_case %>.Utils,
+    only: [send_msg: 1, channel_id: 1, prepare_msg: 2]
 
-  import <%= @project_name_camel_case %>.Utils, only: [send_msg: 1, channel_id: 1]
-
-  @conf Application.get_env(:ewq, __MODULE__)
-
-  def run do
+  def run(room, enabled // true)
+  def run(_room, false), do: nil
+  def run(room, true) do
     "@channel Hello"
-    |> prepare_msg(@conf[:slack_channel])
+    |> prepare_msg(room)
     |> send_msg
-  end
-
-  defp prepare_msg(msg, channel) do
-    %Hedwig.Message{
-      type: "message",
-      room: channel_id(channel),
-      text: msg
   end
 end

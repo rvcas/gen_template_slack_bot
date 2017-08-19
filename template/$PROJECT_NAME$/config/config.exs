@@ -1,6 +1,6 @@
 use Mix.Config
 
-# lib configs
+# configure responders
 config :<%= @project_name %>, <%= @project_name_camel_case %>.Robot,
   adapter: Hedwig.Adapters.Slack,
   name: "<%= @project_name %>",
@@ -10,11 +10,9 @@ config :<%= @project_name %>, <%= @project_name_camel_case %>.Robot,
     {<%= @project_name_camel_case %>.Responders.CommitMsg, []},
   ]
 
-config :quantum,
-  timezone: System.get_env("SYSTEM_TIME") || "America/New_York"
-
 # configure jobs
-config :ewq, <%= @project_name_camel_case %>.Jobs.Hello,
-  schedule: "0 9 * * *",
-  slack_channel: "general",
-  enabled: true
+config :<%= @project_name %>, <%= @project_name_camel_case %>.Scheduler,
+  timezone: "America/New_York"
+  jobs: [
+    {"* * * * *", {<%= @project_name_camel_case %>.Jobs.Hello, :run, ["general"]}},
+  ]
