@@ -13,7 +13,10 @@ defmodule GenTemplateSlackBot.Mixfile do
   @github      "https://github.com/lrosa007/#{@name}"
 
   @description """
-  What your template does (less than 300 characters)
+  Generates a Slack bot boilerplate that works out
+  of the box and is easily extensible.
+
+  Support for cron-like jobs and commands included.
   """
 
   def project do
