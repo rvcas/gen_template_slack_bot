@@ -34,14 +34,14 @@ Projects are generated from it using the `mix gen` task.
 So, before using templates for the first time, you need to install these two tasks:
 
 ```
-$ mix archive.install mix_templates
-$ mix archive.install mix_generator
+$ mix archive.install hex mix_templates
+$ mix archive.install hex mix_generator
 ```
 
 Then you can install this template using
 
 ```
-$ mix template.install gen_template_slack_bot
+$ mix template.install hex gen_template_slack_bot
 ```
 
 ## Use
